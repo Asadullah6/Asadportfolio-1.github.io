@@ -25,6 +25,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   document.body.classList.remove('nav-open');
 }
 
+
+
+
+// Updated Resume Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const resumeBtn = document.getElementById('resumeBtn');
+    
+    resumeBtn.addEventListener('click', function() {
+        // Option 1: If you upload the PDF to your website folder
+        const link = document.createElement('a');
+        link.href = 'Asadullah_Channa_Resume.pdf'; // Make sure to upload the PDF with this name
+        link.download = 'Asadullah_Channa_Frontend_Developer.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Optional: Add analytics tracking
+        console.log('Resume downloaded by user');
+        
+        // Show success message (optional)
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+        this.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+        
+        setTimeout(() => {
+            this.innerHTML = originalText;
+            this.style.background = '';
+        }, 2000);
+    });
+});
+// Resume Button Functionality - Add this to your script.js
+// document.addEventListener('DOMContentLoaded', function() {
+//     const resumeBtn = document.getElementById('resumeBtn');
+    
+//     resumeBtn.addEventListener('click', function() {
+        // Option 1: Direct download (if you have a resume file)
+        // const link = document.createElement('a');
+        // link.href = 'path/to/your/resume.pdf'; // Replace with actual path
+        // link.download = 'Asadullah_Channa_Resume.pdf';
+        // link.click();
+        
+        // Option 2: Open resume in new tab
+        // window.open('path/to/your/resume.pdf', '_blank');
+        
+        // Option 3: For now, show alert (replace with actual functionality)
+        // alert('Resume download will be available soon!');
+        
+        // Option 4: Redirect to Google Drive/Dropbox link
+        // window.open('your-google-drive-or-dropbox-resume-link', '_blank');
+    // });
+});
     // Project Filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.project');
@@ -73,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
      });
         });
-    });
+    // });
 // ...existing code...
 
 

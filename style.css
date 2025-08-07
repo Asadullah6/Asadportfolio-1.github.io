@@ -384,16 +384,41 @@
             font-size: 1.1rem;
             margin-bottom: 30px;
         }
-
+ .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 2.5s both;
+            margin-top: 20px;
+        }
         .hero .btn {
             animation: fadeInUp 1s ease-out 2.5s both;
             transform: scale(1);
             transition: all 0.3s ease;
+            margin: 5px;
         }
 
         .hero .btn:hover {
             transform: scale(1.05) translateY(-3px);
         }
+        /* Resume Button Specific Styling */
+.btn-resume {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, #229954, #27ae60);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.btn-resume i {
+    margin-right: 5px;
+}
 
         @keyframes fadeInUp {
             from {
@@ -406,6 +431,18 @@
             }
         }
 
+        /* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero .btn {
+        width: 200px;
+        text-align: center;
+    }
+}
         /* Enhanced About Section */
         .about {
             padding: 80px 0;
