@@ -53,31 +53,19 @@
 
 
     <!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="container">
-        <h2>Hi, I'm <span>ASADULLAH CHANNA</span></h2>
-        <h3>Web Developer</h3>
-        <p>I build responsive, modern, and user-friendly websites.</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View My Work</a>
-            <a href="Asad CV.docx" class="btn btn-resume" id="resumeBtn" download>
-                <i class="fas fa-download"></i> Resume
-            </a>
-        </div>
-    </div>
-</section>
-   
-   
-    <!-- <section id="home" class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <h2>Hi, I'm <span>ASADULLAH CHANNA</span></h2>
             <h3>Web Developer</h3>
             <p>I build responsive, modern, and user-friendly websites.</p>
-            <a href="#projects" class="btn">View My Work</a>
-            <button class="btn btn-resume nav-resume-btn" id="resumeBtn">
-                <i class="fas fa-download"></i> Resume
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="Asad CV.docx" class="btn btn-resume" id="resumeBtn" download>
+                    <i class="fas fa-download"></i> Resume
+                </a>
+            </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -180,11 +168,11 @@
                     </div>
                 </div>
                 <div class="project" data-category="fullstack">
-                    <img src="car wash image.png" alt="Project 3">
-                    <h3>EcoWash Hub</h3>
-                    <p>A portfolio project that blends modern web design with eco-friendly car care.</p>
+                    <img src="smart expense 1.png" alt="Project 3">
+                    <h3>Smart Expense Tracker</h3>
+                    <p> A fully responsive web app with real-time analytics, category filtering, and interactive charts.</p>
                     <div class="project-links">
-                        <a href="#" class="btn">Live Demo</a>
+                        <a href="https://asadullah6.github.io/Smart-Expense-Tracker.github.io/" class="btn">Live Demo</a>
                         <a href="#" class="btn">Code</a>
                     </div>
                 </div>
@@ -193,23 +181,69 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://github.com/Asadullah6" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" title="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
-                <!-- <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a> -->
+     <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Get In Touch</h2>
+        
+        <!-- ADD this div for showing messages -->
+        <div id="form-messages"></div>
+        
+        <!-- CHANGE your form to this: -->
+       <form id="contact-form" action="https://formspree.io/f/asadullahchanna454@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            
+            <!-- ADD these hidden fields -->
+            <input type="hidden" name="_subject" value="New message from your portfolio!">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <button type="submit" class="btn" id="submit-btn">Send Message</button>
+        </form>
+        
+        <div class="social-links">
+            <a href="https://github.com/Asadullah6" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</section>
+    <!-- <section id="contact" class="contact">
+        <! ADDED: Container for success/error messages -->
+        <!-- <div id="form-messages">
+
+            <div class="container">
+                <h2>Get In Touch</h2> -->
+                <!-- <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button> -->
+
+                <!-- CHANGED: Added Formspree action and method -->
+                <!-- <form id="contact-form" action="https://formspree.io/f/xdkowqeq" method="POST"> -->
+                    <!-- ADDED: Name attribute for form processing -->
+                    <!-- <input type="text" id="name" name="name" placeholder="Your Name" required> -->
+                    <!-- ADDED: Name attribute for form processing -->
+                    <!-- <input type="email" id="email" name="email" placeholder="Your Email" required> -->
+                    <!-- ADDED: Name attribute for form processing -->
+                    <!-- <textarea id="message" name="message" placeholder="Your Message" required></textarea> -->
+                    <!-- ADDED: Hidden fields for form configuration -->
+                    <!-- <input type="hidden" name="_next" value="#contact"> -->
+                    <!-- <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission"> -->
+                    <!-- ADDED: ID for JavaScript targeting -->
+                    <!-- <button type="submit" class="btn" id="submit-btn">Send Message</button>
+                </form> -->
+                <!-- </form> -->
+                <!-- <div class="social-links">
+                    <a href="https://github.com/Asadullah6" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a> -->
+                    <!-- <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a> -->
+                <!-- </div>
             </div>
         </div>
-    </section>
+    </section> --> -->
 
     <!-- Footer -->
     <footer>
@@ -219,6 +253,6 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </html>
