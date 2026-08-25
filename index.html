@@ -4,273 +4,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASADULLAH CHANNA | Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ASADULLAH CHANNA | Full Stack Developer & Software Engineer</title>
+
+    <!-- Meta SEO & Social Cards -->
+    <meta name="description" content="Portfolio of Asadullah Channa - Full Stack Developer specializing in React, Node.js, JavaScript, Express, and Database Systems.">
+    <meta property="og:title" content="ASADULLAH CHANNA | Full Stack Developer Portfolio">
+    <meta property="og:description" content="Explore interactive projects, frontend applications, and full-stack solutions built by Asadullah Channa.">
+    <meta property="og:image" content="assets/images/asad-profile.jpg">
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Interactive Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
 
-    <div class="overlay"></div>
+    <!-- Floating 2026 Pill Header -->
+    <header class="header">
+        <div class="navbar">
+            <a href="#home" class="nav-brand">
+                <div class="brand-badge">AC</div>
+                <span>ASADULLAH</span>
+            </a>
 
-    <!-- Header/Navigation -->
-
-    <!-- New Navigation -->
-    <header>
-        <div id="container">
-            <h1 class="logo">ASADULLAH CHANNA
-                <!-- <img src="asad1logo.jpg" alt=""> -->
-            </h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Mobile Menu">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
         </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <!-- Mobile Menu Overlay -->
-        <!-- <div class="mobile-menu" id="mobileMenu">
-            <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            </ul>
-        </div> -->
-
-
-
     </header>
 
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
 
+    <!-- Main Content Grid -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section hero">
+            <div class="container">
+                <div class="bento-grid">
 
+                    <!-- Hero Title Bento Card -->
+                    <div class="bento-card hero-bento-title">
+                        <div class="live-status-pill">
+                            <span class="pulse-emerald"></span>
+                            Full Stack Developer • Open for Roles
+                        </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Hi, I'm <span>ASADULLAH CHANNA</span></h2>
-            <h3>Web Developer</h3>
-            <p>I build responsive, modern, and user-friendly websites.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="Asad CV.docx" class="btn btn-resume" id="resumeBtn" download>
-                    <i class="fas fa-download"></i> Resume
-                </a>
+                        <h1 class="hero-h1">
+                            Hi, I'm <span class="gradient-text">ASADULLAH CHANNA</span>
+                        </h1>
+
+                        <p class="hero-bio">
+                            Passionate Full Stack Developer with 2.5+ years of experience engineering robust frontend interfaces, backend APIs, and scalable web solutions.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn-cyber btn-primary">
+                                <i class="fas fa-layer-group"></i> Explore Projects
+                            </a>
+                            <a href="Asad CV.docx" download class="btn-cyber btn-glass" id="cvDownloadBtn">
+                                <i class="fas fa-file-arrow-down"></i> Download CV
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2026 Developer Terminal Bento Card -->
+                    <div class="bento-card terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">asadullah@fullstack-dev:~</span>
+                            <i class="fas fa-terminal" style="color: var(--neon-indigo); font-size: 0.8rem;"></i>
+                        </div>
+
+                        <div class="terminal-body" id="termOutput">
+                            <div class="term-line">
+                                <span class="term-prompt">❯</span>
+                                <span>asad.init()</span>
+                            </div>
+                            <div class="term-output">
+                                Full Stack Developer Environment Initialized.<br>
+                                Type <strong style="color: var(--neon-cyan);">help</strong> or click quick commands below.
+                            </div>
+                        </div>
+
+                        <div class="quick-pills">
+                            <button class="pill-cmd" data-cmd="asad.skills">❯ asad.skills</button>
+                            <button class="pill-cmd" data-cmd="asad.experience">❯ asad.experience</button>
+                            <button class="pill-cmd" data-cmd="asad.contact">❯ asad.contact</button>
+                            <button class="pill-cmd" data-cmd="clear">❯ clear</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="WhatsApp Image 2025-08-02 at 11.10.15_79a50689.jpg" alt="ASADULLAH CHANNA">
-                <p>
-                    I'm a passionate web developer with expertise in HTML, CSS, JavaScript, and modern frameworks like
-                    React.
-                    I love creating seamless digital experiences and solving problems through code. <br>
+        <!-- About & Profile Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="gradient-text">About Me</h2>
+                    <p>Building seamless end-to-end digital experiences through modern code.</p>
+                </div>
 
-                    <br> With 2.5+ years of experience, I transform creative ideas into functional, responsive websites
-                    that
-                    not only look stunning but deliver exceptional user experiences. <br>
+                <div class="bento-grid">
+                    <!-- Profile Card -->
+                    <div class="bento-card bento-about-profile">
+                        <div class="profile-img-frame">
+                            <img src="assets/images/asad-profile.jpg" alt="ASADULLAH CHANNA - Full Stack Developer" class="profile-img">
+                        </div>
+                        <h3>ASADULLAH CHANNA</h3>
+                        <span style="color: var(--neon-cyan); font-weight: 600; font-size: 0.95rem;">Full Stack Developer</span>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                            <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" style="font-size: 1.2rem; color: var(--text-secondary);" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" target="_blank" rel="noopener noreferrer" style="font-size: 1.2rem; color: var(--text-secondary);" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
 
+                    <!-- Bio Card -->
+                    <div class="bento-card bento-about-bio">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Architecting Full-Stack Solutions</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                            I'm a passionate Full Stack Developer with expertise in HTML, CSS, JavaScript, React, Node.js, Express, and database management. I love creating seamless digital experiences and solving complex problems through clean code.
+                        </p>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            With 2.5+ years of experience, I transform creative ideas into functional, responsive web applications that look stunning and deliver exceptional user experiences. From database architecture to frontend deployment, I ensure every project exceeds expectations.
+                        </p>
+                    </div>
 
+                    <!-- Stats Cards -->
+                    <div class="bento-card bento-stat-card">
+                        <div class="stat-num">2.5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
 
-                    <br> I specialize in crafting clean, efficient code and stay updated with the latest web
-                    technologies.
-                    From concept to deployment, I ensure every project exceeds expectations.
-                </p>
+                    <div class="bento-card bento-stat-card">
+                        <div class="stat-num">15+</div>
+                        <div class="stat-label">Projects Built</div>
+                    </div>
 
+                    <div class="bento-card bento-stat-card">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                </p>
-                <div class="skills-container">
-                    <div class="skill-item">
-                        <!-- <span>HTML/CSS</span> -->
-                        <div class="progress-bar">
-                            <div class="progress"></div>
+        <!-- Skills Matrix Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="gradient-text">Skills & Technologies</h2>
+                    <p>Full-stack technologies and frameworks I use to build scalable web applications.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fab fa-html5"></i></div>
+                        <div class="skill-info">
+                            <h3>HTML5</h3>
+                            <span class="skill-level">Semantic Structure & Web Standards</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fab fa-css3-alt"></i></div>
+                        <div class="skill-info">
+                            <h3>CSS3</h3>
+                            <span class="skill-level">Grid, Flexbox, Animations & Glass</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fab fa-js"></i></div>
+                        <div class="skill-info">
+                            <h3>JavaScript</h3>
+                            <span class="skill-level">ES6+, DOM, Async & APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fab fa-react"></i></div>
+                        <div class="skill-info">
+                            <h3>React</h3>
+                            <span class="skill-level">Components, Hooks & State</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fab fa-node-js"></i></div>
+                        <div class="skill-info">
+                            <h3>Node.js & Express</h3>
+                            <span class="skill-level">RESTful APIs & Backend Logic</span>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-skill">
+                        <div class="skill-icon-box"><i class="fas fa-database"></i></div>
+                        <div class="skill-info">
+                            <h3>MongoDB / SQL</h3>
+                            <span class="skill-level">Database Architecture & Queries</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>My Skills</h2>
-            <p>I have worked on various Front-End projects and am currently <br>learning Back-End development</p>
-            <div class="skills-grid">
-                <div class="skill" data-skill="html">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                </div>
-                <div class="skill" data-skill="css">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                </div>
-                <div class="skill" data-skill="js">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="skill" data-skill="react">
-                    <i class="fab fa-react"></i>
-                    <h3>React</h3>
-                </div>
-                <div class="skill" data-skill="node">
-                    <i class="fab fa-node-js"></i>
-                    <h3>Node.js</h3>
-                </div>
-                <div class="skill" data-skill="db">
-                    <i class="fas fa-database"></i>
-                    <h3>MongoDB/SQL</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="fullstack">Fullstack</button>
-            </div>
-                <div class="projects-grid">
-                <div class="project" data-category="fullstack">
-                    <img src="expert tutors .png" alt="Project 1">
-                    <h3>Expert Tutor Hyderabad</h3>
-                    <p>Expert Tutor Hyderabad is a Final Year Project</p>
-                    <div class="project-links">
-                        <a href="https://study-tutor.vercel.app/" class="btn">Live Demo</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-                <div class="project" data-category="backend">
-                    <img src="IMPORT EXPORT.png" alt="Project 2">
-                    <h3>GMB SONS</h3>
-                    <p>"Your bridge to seamless import & export solutions.</p>
-                    <div class="project-links">
-                        <a href="https://gmbsons.com/" class="btn">Live
-                            Demo</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-                <div class="project" data-category="frontend">
-                    <img src="online tutor.png" alt="Project 1">
-                    <h3>StudyConnect</h3>
-                    <p>Connect with professional tutors to achieve academic excellence.</p>
-                    <div class="project-links">
-                        <a href="https://asadullah6.github.io/Studyconnect-1.github.io/" class="btn">Live Demo</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-                <div class="project" data-category="backend">
-                    <img src="online meal.png" alt="Project 2">
-                    <h3>MyOnlineMeal</h3>
-                    <p>"Built a modern landing page for an online healthy meal delivery service.</p>
-                    <div class="project-links">
-                        <a href="https://asadullah6.github.io/Online-Meal-Website-1.github.io/" class="btn">Live
-                            Demo</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-                <div class="project" data-category="fullstack">
-                    <img src="smart expense 1.png" alt="Project 3">
-                    <h3>Smart Expense Tracker</h3>
-                    <p> A fully responsive web app with real-time analytics, category filtering, and interactive charts.</p>
-                    <div class="project-links">
-                        <a href="https://asadullah6.github.io/Smart-Expense-Tracker.github.io/" class="btn">Live Demo</a>
-                        <a href="#" class="btn">Code</a>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- Contact Section -->
-     <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2>Get In Touch</h2>
-        
-        <!-- ADD this div for showing messages -->
-        <div id="form-messages"></div>
-        
-        <!-- CHANGE your form to this: -->
-       <form id="contact-form" action="https://formspree.io/f/asadullahchanna454@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            
-            <!-- ADD these hidden fields -->
-            <input type="hidden" name="_subject" value="New message from your portfolio!">
-            <input type="hidden" name="_captcha" value="false">
-            
-            <button type="submit" class="btn" id="submit-btn">Send Message</button>
-        </form>
-        
-        <div class="social-links">
-            <a href="https://github.com/Asadullah6" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</section>
-    <!-- <section id="contact" class="contact">
-        <! ADDED: Container for success/error messages -->
-        <!-- <div id="form-messages">
-
+        <!-- Featured Projects Section -->
+        <section id="projects" class="section">
             <div class="container">
-                <h2>Get In Touch</h2> -->
-                <!-- <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button> -->
+                <div class="section-header">
+                    <h2 class="gradient-text">My Projects</h2>
+                    <p>Explore my recent work across frontend, backend, and fullstack development.</p>
+                </div>
 
-                <!-- CHANGED: Added Formspree action and method -->
-                <!-- <form id="contact-form" action="https://formspree.io/f/xdkowqeq" method="POST"> -->
-                    <!-- ADDED: Name attribute for form processing -->
-                    <!-- <input type="text" id="name" name="name" placeholder="Your Name" required> -->
-                    <!-- ADDED: Name attribute for form processing -->
-                    <!-- <input type="email" id="email" name="email" placeholder="Your Email" required> -->
-                    <!-- ADDED: Name attribute for form processing -->
-                    <!-- <textarea id="message" name="message" placeholder="Your Message" required></textarea> -->
-                    <!-- ADDED: Hidden fields for form configuration -->
-                    <!-- <input type="hidden" name="_next" value="#contact"> -->
-                    <!-- <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission"> -->
-                    <!-- ADDED: ID for JavaScript targeting -->
-                    <!-- <button type="submit" class="btn" id="submit-btn">Send Message</button>
-                </form> -->
-                <!-- </form> -->
-                <!-- <div class="social-links">
-                    <a href="https://github.com/Asadullah6" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/asadullah-channa-6b4611377/" title="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a> -->
-                    <!-- <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a> -->
-                <!-- </div>
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="tab-pill active" data-filter="all">All</button>
+                    <button class="tab-pill" data-filter="fullstack">Fullstack</button>
+                    <button class="tab-pill" data-filter="frontend">Frontend</button>
+                    <button class="tab-pill" data-filter="backend">Backend</button>
+                </div>
+
+                <div class="bento-grid" id="projectsContainer">
+
+                    <!-- Project 1: Expert Tutor Hyderabad -->
+                    <div class="bento-card bento-project-card large" data-category="fullstack">
+                        <div class="project-thumb">
+                            <img src="assets/images/expert tutors .png" alt="Expert Tutor Hyderabad">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Fullstack</span>
+                                <span class="tag">Final Year Project</span>
+                            </div>
+                            <h3 class="project-title">Expert Tutor Hyderabad</h3>
+                            <p class="project-desc">Expert Tutor Hyderabad is a Final Year Project designed to connect students with professional academic tutors.</p>
+                            <div class="project-links">
+                                <a href="https://study-tutor.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-primary">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-glass">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: GMB SONS -->
+                    <div class="bento-card bento-project-card" data-category="backend">
+                        <div class="project-thumb">
+                            <img src="assets/images/IMPORT EXPORT.png" alt="GMB SONS">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Backend</span>
+                                <span class="tag">Import & Export</span>
+                            </div>
+                            <h3 class="project-title">GMB SONS</h3>
+                            <p class="project-desc">"Your bridge to seamless import & export solutions across global trade routes.</p>
+                            <div class="project-links">
+                                <a href="https://gmbsons.com/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-primary">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-glass">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: StudyConnect -->
+                    <div class="bento-card bento-project-card" data-category="frontend">
+                        <div class="project-thumb">
+                            <img src="assets/images/online tutor.png" alt="StudyConnect">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Frontend</span>
+                                <span class="tag">Education</span>
+                            </div>
+                            <h3 class="project-title">StudyConnect</h3>
+                            <p class="project-desc">Connect with professional tutors to achieve academic excellence through interactive online sessions.</p>
+                            <div class="project-links">
+                                <a href="https://asadullah6.github.io/Studyconnect-1.github.io/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-primary">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-glass">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: MyOnlineMeal -->
+                    <div class="bento-card bento-project-card" data-category="backend">
+                        <div class="project-thumb">
+                            <img src="assets/images/online meal.png" alt="MyOnlineMeal">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Backend / Web</span>
+                                <span class="tag">Food Delivery</span>
+                            </div>
+                            <h3 class="project-title">MyOnlineMeal</h3>
+                            <p class="project-desc">"Built a modern landing page for an online healthy meal delivery service.</p>
+                            <div class="project-links">
+                                <a href="https://asadullah6.github.io/Online-Meal-Website-1.github.io/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-primary">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-glass">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Smart Expense Tracker -->
+                    <div class="bento-card bento-project-card" data-category="fullstack">
+                        <div class="project-thumb">
+                            <img src="assets/images/smart expense 1.png" alt="Smart Expense Tracker">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tags">
+                                <span class="tag">Fullstack</span>
+                                <span class="tag">Financial App</span>
+                            </div>
+                            <h3 class="project-title">Smart Expense Tracker</h3>
+                            <p class="project-desc">A fully responsive web app with real-time analytics, category filtering, and interactive charts.</p>
+                            <div class="project-links">
+                                <a href="https://asadullah6.github.io/Smart-Expense-Tracker.github.io/" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-primary">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Asadullah6" target="_blank" rel="noopener noreferrer" class="btn-cyber btn-glass">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section> --> -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="gradient-text">Get In Touch</h2>
+                    <p>Let's collaborate on your next full-stack project or web application.</p>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card bento-contact-info">
+                        <h3>Let's Connect</h3>
+                        <p style="color: var(--text-secondary);">
+                            Whether you have a freelance project, job opportunity, or question, feel free to drop a message.
+                        </p>
+
+                        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fas fa-envelope" style="color: var(--neon-cyan); font-size: 1.2rem;"></i>
+                                <span>asadullahchanna454@gmail.com</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fab fa-github" style="color: var(--neon-indigo); font-size: 1.2rem;"></i>
+                                <span>github.com/Asadullah6</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fab fa-linkedin" style="color: var(--neon-magenta); font-size: 1.2rem;"></i>
+                                <span>linkedin.com/in/asadullah-channa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-card bento-contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/asadullahchanna454@gmail.com" method="POST">
+                            <div class="form-field">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. john@example.com" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Hi Asadullah, I'd like to work with you on..." required></textarea>
+                            </div>
+
+                            <input type="hidden" name="_subject" value="New message from your portfolio!">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <button type="submit" class="btn-cyber btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <p>&copy; <span id="year"></span> ASADULLAH CHANNA. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Toast Notification Container -->
+    <div class="toast-box" id="toastBox"></div>
+
+    <!-- Script File -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
 
 </html>
